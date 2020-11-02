@@ -11,6 +11,12 @@ import { GermanyStates } from './germany-states';
 export class GermanyStatesComponent implements OnInit {
 
   states: GermanyStates[] = [];
+  
+  selectedState: GermanyStates;
+
+  onSelect(state: GermanyStates): void {
+    this.selectedState = state;
+  }
 
   constructor(private service: GermanyStatesService) { }
 

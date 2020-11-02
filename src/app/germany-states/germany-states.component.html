@@ -1,5 +1,16 @@
-<p>germany-states works!</p>
-
 <ul>
-    <li *ngFor="let state of states">{{state.name}}</li>
+    <li *ngFor="let state of states" (click)="onSelect(state)" [style.color]="selectedState === state ? 'blue' : 'black'">{{state.name}}</li>
 </ul>
+
+
+<div *ngIf="selectedState">
+
+    <h2>Details of: {{selectedState.name | uppercase}}</h2>
+    <div><span>id: </span>{{selectedState.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="selectedState.name" placeholder="name"/>
+      </label>
+    </div>
+  
+  </div>
