@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { GermanyStatesComponent } from './germany-states/germany-states.component';
+import { GermanyStatesDetailComponent } from './germany-states-detail/germany-states-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    GermanyStatesComponent
+    GermanyStatesComponent,
+    GermanyStatesDetailComponent
   ],
   imports: [
     BrowserModule,

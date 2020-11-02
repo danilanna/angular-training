@@ -2,15 +2,4 @@
     <li *ngFor="let state of states" (click)="onSelect(state)" [style.color]="selectedState === state ? 'blue' : 'black'">{{state.name}}</li>
 </ul>
 
-
-<div *ngIf="selectedState">
-
-    <h2>Details of: {{selectedState.name | uppercase}}</h2>
-    <div><span>id: </span>{{selectedState.id}}</div>
-    <div>
-      <label>name:
-        <input [(ngModel)]="selectedState.name" placeholder="name"/>
-      </label>
-    </div>
-  
-  </div>
+<app-germany-states-detail [selectedState]="selectedState"></app-germany-states-detail>
