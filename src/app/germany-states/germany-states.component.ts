@@ -24,4 +24,8 @@ export class GermanyStatesComponent implements OnInit {
     .subscribe(states => this.states = states);
   }
 
+  reset() {
+    this.selectedState = null;
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { GermanyStates } from '../germany-states/germany-states';
 
 @Component({
@@ -8,6 +8,11 @@ import { GermanyStates } from '../germany-states/germany-states';
 })
 export class GermanyStatesDetailComponent implements OnInit {
   @Input() selectedState: GermanyStates;
+  @Output() resetEvent = new EventEmitter();
+
+  clear() {
+    this.resetEvent.emit();
+  }
   
   constructor() { }
 
