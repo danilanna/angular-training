@@ -1,11 +1,7 @@
-<div *ngIf="selectedState">
-
-    <h2>Details of: {{selectedState.name | uppercase}}</h2>
-    <div><span>id: </span>{{selectedState.id}}</div>
-    <div>
-      <label>name:
-        <input [(ngModel)]="selectedState.name" placeholder="name"/>
-      </label>
+  <div class="card bg-light mb-3" *ngIf="selectedState">
+    <div class="card-header">Details</div>
+    <div class="card-body">
+      <h5 class="card-title">Id: {{selectedState.id}}</h5>
+      <p class="card-text">Name: {{selectedState.name | uppercase}}</p>
     </div>
-  
   </div>

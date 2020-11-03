@@ -1,5 +1,16 @@
-<ul>
-    <li *ngFor="let state of states" (click)="onSelect(state)" [style.color]="selectedState === state ? 'blue' : 'black'">{{state.name}}</li>
-</ul>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let state of states" (click)="onSelect(state)" [class.table-dark]="selectedState === state">
+            <td>{{state.id}}</td>
+            <td>{{state.name}}</td>
+        </tr>
+    </tbody>
+</table>
 
 <app-germany-states-detail [selectedState]="selectedState"></app-germany-states-detail>
