@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { GermanyStates } from './germany-states';
 
 @Injectable({
@@ -6,76 +8,15 @@ import { GermanyStates } from './germany-states';
 })
 export class GermanyStatesService {
 
-  states: GermanyStates[] = [
-    {
-      id: 1,
-      name: "Baden-Württemberg",
-    },
-    {
-      id: 2,
-      name: "Bayern",
-    },
-    {
-      id: 3,
-      name: "Berlin",
-    },
-    {
-      id: 4,
-      name: "Brandenburg",
-    },
-    {
-      id: 5,
-      name: "Bremen",
-    },
-    {
-      id: 6,
-      name: "Hamburg",
-    },
-    {
-      id: 7,
-      name: "Hessen",
-    },
-    {
-      id: 8,
-      name: "Mecklenburg-Vorpommern",
-    },
-    {
-      id: 9,
-      name: "Niedersachsen",
-    },
-    {
-      id: 10,
-      name: "Nordrhein-Westfalen",
-    },
-    {
-      id: 11,
-      name: "Rheinland-Pfalz",
-    },
-    {
-      id: 12,
-      name: "Saarland",
-    },
-    {
-      id: 13,
-      name: "Sachsen",
-    },
-    {
-      id: 14,
-      name: "Sachsen-Anhalt",
-    },
-    {
-      id: 15,
-      name: "Schleswig-Holstein",
-    },
-    {
-      id: 16,
-      name: "Thüringen",
-    }
-  ]
+  private statesUrl = 'api/states';
 
-  constructor() { }
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
-  getStates(): GermanyStates[] {
-    return this.states;
+  constructor(private http: HttpClient) { }
+
+  getStates(): Observable<GermanyStates[]> {
+    return this.http.get<GermanyStates[]>(this.statesUrl);
   }
 }

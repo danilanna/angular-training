@@ -6,7 +6,6 @@ import { GermanyStates } from './germany-states';
   selector: 'app-germany-states',
   templateUrl: './germany-states.component.html',
   styleUrls: ['./germany-states.component.scss'],
-  providers: [GermanyStatesService]
 })
 export class GermanyStatesComponent implements OnInit {
 
@@ -21,7 +20,8 @@ export class GermanyStatesComponent implements OnInit {
   constructor(private service: GermanyStatesService) { }
 
   ngOnInit(): void {
-    this.states = this.service.getStates();
+    this.service.getStates()
+    .subscribe(states => this.states = states);
   }
 
 }
