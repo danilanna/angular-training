@@ -20,12 +20,22 @@ export class GermanyStatesComponent implements OnInit {
   constructor(private service: GermanyStatesService) { }
 
   ngOnInit(): void {
-    this.service.getStates()
-    .subscribe(states => this.states = states);
+    this.getStates();
+  }
+
+  getStates(): void {
+    this.service.getStates().subscribe(states => this.states = states);
   }
 
   reset() {
     this.selectedState = null;
+  }
+
+  delete(state: GermanyStates) {
+    this.service.deleteState(state.id).subscribe(() => {
+      this.getStates();
+      this.reset();
+    });
   }
 
 }

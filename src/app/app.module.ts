@@ -10,13 +10,15 @@ import { HomeComponent } from './home/home.component';
 import { GermanyStatesComponent } from './germany-states/germany-states.component';
 import { GermanyStatesDetailComponent } from './germany-states-detail/germany-states-detail.component';
 import { InMemoryService } from './in-memory.service';
+import { GermanyStatesEditComponent } from './germany-states-edit/germany-states-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     GermanyStatesComponent,
-    GermanyStatesDetailComponent
+    GermanyStatesDetailComponent,
+    GermanyStatesEditComponent,
   ],
   imports: [
     BrowserModule,

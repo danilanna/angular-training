@@ -3,12 +3,16 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Name</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Remove</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let state of states" (click)="onSelect(state)" [class.table-dark]="selectedState === state">
             <td>{{state.id}}</td>
             <td>{{state.name}}</td>
+            <td><a routerLink="/germany-states/{{state.id}}" class="btn btn-info">Edit</a></td>
+            <td><button class="btn btn-danger" (click)="delete(state)">Remove</button></td>
         </tr>
     </tbody>
 </table>
