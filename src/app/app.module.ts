@@ -6,26 +6,19 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { GermanyStatesComponent } from './germany-states/germany-states.component';
-import { GermanyStatesDetailComponent } from './germany-states-detail/germany-states-detail.component';
 import { InMemoryService } from './in-memory.service';
-import { GermanyStatesEditComponent } from './germany-states-edit/germany-states-edit.component';
+import { GermanyStatesModule } from './germany-states/germany-states.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    GermanyStatesComponent,
-    GermanyStatesDetailComponent,
-    GermanyStatesEditComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryService),
+    GermanyStatesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

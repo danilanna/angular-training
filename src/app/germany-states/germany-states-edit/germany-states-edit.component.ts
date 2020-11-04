@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { GermanyStatesService } from '../germany-states/germany-states.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { GermanyStates } from '../germany-states/germany-states';
+import { GermanyStatesService } from '../germany-states.service';
+import { GermanyStates } from '../germany-states';
 
 @Component({
   selector: 'app-germany-states-edit',
