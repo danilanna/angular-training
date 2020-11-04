@@ -10,10 +10,10 @@ export class GermanyStatesDetailComponent implements OnInit {
   @Input() selectedState: GermanyStates;
   @Output() resetEvent = new EventEmitter();
 
-  clear() {
+  clear(): void {
     this.resetEvent.emit();
   }
-  
+
   constructor() { }
 
   ngOnInit(): void {

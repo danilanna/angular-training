@@ -22,4 +22,11 @@ describe('GermanyStatesDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should clear', () => {
+    component.selectedState = {id: 1, name: 'Bayern'};
+    component.resetEvent.subscribe(() => component.selectedState = null);
+    component.clear();
+    expect(component.selectedState).toBe(null);
+  });
 });

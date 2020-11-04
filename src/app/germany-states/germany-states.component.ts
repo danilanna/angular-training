@@ -10,7 +10,7 @@ import { GermanyStates } from './germany-states';
 export class GermanyStatesComponent implements OnInit {
 
   states: GermanyStates[] = [];
-  
+
   selectedState: GermanyStates;
 
   onSelect(state: GermanyStates): void {
@@ -27,11 +27,11 @@ export class GermanyStatesComponent implements OnInit {
     this.service.getStates().subscribe(states => this.states = states);
   }
 
-  reset() {
+  reset(): void {
     this.selectedState = null;
   }
 
-  delete(state: GermanyStates) {
+  delete(state: GermanyStates): void {
     this.service.deleteState(state.id).subscribe(() => {
       this.getStates();
       this.reset();

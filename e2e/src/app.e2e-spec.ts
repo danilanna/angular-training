@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('training app is running!');
+  it('should navigate to germany-states', async () => {
+    await page.navigateTo();
+    expect(await page.currentUrl()).toContain('/germany-states');
   });
 
   afterEach(async () => {
